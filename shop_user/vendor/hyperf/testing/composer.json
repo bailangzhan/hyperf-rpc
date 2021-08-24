@@ -1,0 +1,38 @@
+{
+    "name": "hyperf/testing",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "swoole",
+        "testing"
+    ],
+    "description": "Testing for hyperf",
+    "autoload": {
+        "psr-4": {
+            "Hyperf\\Testing\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\Testing\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.2",
+        "psr/container": "^1.0|^2.0",
+        "phpunit/phpunit": "^9.5",
+        "hyperf/contract": "~2.2.0",
+        "hyperf/http-message": "~2.2.0",
+        "hyperf/http-server": "~2.2.0",
+        "hyperf/utils": "~2.2.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.2-dev"
+        }
+    },
+    "bin": [
+        "co-phpunit"
+    ]
+}

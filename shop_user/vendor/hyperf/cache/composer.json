@@ -1,0 +1,49 @@
+{
+    "name": "hyperf/cache",
+    "description": "A cache component for hyperf.",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "hyperf",
+        "cache"
+    ],
+    "homepage": "https://hyperf.io",
+    "support": {
+        "docs": "https://hyperf.wiki",
+        "issues": "https://github.com/hyperf/hyperf/issues",
+        "pull-request": "https://github.com/hyperf/hyperf/pulls",
+        "source": "https://github.com/hyperf/hyperf"
+    },
+    "require": {
+        "php": ">=7.2",
+        "psr/container": "^1.0|^2.0",
+        "psr/simple-cache": "^1.0",
+        "hyperf/contract": "~2.2.0",
+        "hyperf/utils": "~2.2.0"
+    },
+    "suggest": {
+        "hyperf/di": "Use cache annotations.",
+        "hyperf/event": "Use listener to delete annotation cache."
+    },
+    "autoload": {
+        "psr-4": {
+            "Hyperf\\Cache\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\Cache\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.2-dev"
+        },
+        "hyperf": {
+            "config": "Hyperf\\Cache\\ConfigProvider"
+        }
+    }
+}

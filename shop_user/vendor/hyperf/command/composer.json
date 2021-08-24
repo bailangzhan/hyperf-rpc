@@ -1,0 +1,38 @@
+{
+    "name": "hyperf/command",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "swoole",
+        "command"
+    ],
+    "description": "Command for hyperf",
+    "autoload": {
+        "psr-4": {
+            "Hyperf\\Command\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\Command\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.2",
+        "hyperf/utils": "~2.2.0",
+        "psr/event-dispatcher": "^1.0",
+        "symfony/console": "^5.0"
+    },
+    "suggest": {
+        "hyperf/di": "Required to use annotations."
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.2-dev"
+        }
+    }
+}

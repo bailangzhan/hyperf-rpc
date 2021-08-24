@@ -1,0 +1,56 @@
+{
+    "name": "hyperf/config",
+    "description": "An independent component that provides configuration container.",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "swoole",
+        "hyperf",
+        "config",
+        "configuration"
+    ],
+    "homepage": "https://hyperf.io",
+    "support": {
+        "docs": "https://hyperf.wiki",
+        "issues": "https://github.com/hyperf/hyperf/issues",
+        "pull-request": "https://github.com/hyperf/hyperf/pulls",
+        "source": "https://github.com/hyperf/hyperf"
+    },
+    "require": {
+        "php": ">=7.2",
+        "hyperf/contract": "~2.2.0",
+        "hyperf/utils": "~2.2.0",
+        "psr/container": "^1.0|^2.0",
+        "symfony/finder": "^5.0"
+    },
+    "suggest": {
+        "vlucas/phpdotenv": "Allows using enviroment value to override the config",
+        "hyperf/di": "Allows using @Value annotation",
+        "hyperf/event": "Allows using @Value annotation",
+        "hyperf/framework": "Allows using @Value annotation"
+    },
+    "autoload": {
+        "files": [
+            "./src/Functions.php"
+        ],
+        "psr-4": {
+            "Hyperf\\Config\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\Config\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.2-dev"
+        },
+        "hyperf": {
+            "config": "Hyperf\\Config\\ConfigProvider"
+        }
+    }
+}
