@@ -2,7 +2,9 @@
 
 namespace App\JsonRpc;
 
+use App\Exception\BusinessException;
 use App\Model\User;
+use App\Tools\Result\Result;
 use Hyperf\RpcServer\Annotation\RpcService;
 
 
@@ -13,8 +15,8 @@ class UserService implements UserServiceInterface
 {
     /**
      * @param string $name
-     * @param string $gender
-     * @return string
+     * @param int $gender
+     * @return array
      */
     public function createUser(string $name, int $gender)
     {
@@ -26,7 +28,8 @@ class UserService implements UserServiceInterface
             'name' => $name,
             'gender' => $gender,
         ]);
-        return $result ? "success" : "fail";
+//        return Result::error("fail");
+        return $result ? Result::success() : Result::error("fail");
     }
 
     /**
@@ -35,11 +38,13 @@ class UserService implements UserServiceInterface
      */
     public function getUserInfo(int $id)
     {
+//        foo();
         $user = User::query()->find($id);
         if (empty($user)) {
             throw new \RuntimeException("user not found");
         }
-        return $user->toArray();
+//        return $user->toArray();
+        return Result::success($user->toArray());
     }
 }
 

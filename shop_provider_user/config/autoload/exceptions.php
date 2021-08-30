@@ -15,5 +15,8 @@ return [
             Hyperf\HttpServer\Exception\Handler\HttpExceptionHandler::class,
             App\Exception\Handler\AppExceptionHandler::class,
         ],
+        'jsonrpc-http' => [
+            App\Exception\Handler\JsonRpcExceptionHandler::class,
+        ],
     ],
 ];
