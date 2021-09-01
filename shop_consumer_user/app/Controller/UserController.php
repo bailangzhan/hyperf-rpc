@@ -3,7 +3,10 @@
 declare(strict_types=1);
 namespace App\Controller;
 
+use App\Constants\ErrorCode;
+use App\Exception\BusinessException;
 use App\JsonRpc\UserServiceInterface;
+use App\Tools\Result;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpServer\Annotation\AutoController;
 
@@ -24,12 +27,20 @@ class UserController extends AbstractController
     {
         $name = (string) $this->request->input('name', '');
         $gender = (int) $this->request->input('gender', 0);
-        return $this->userServiceClient->createUser($name, $gender);
+        $result = $this->userServiceClient->createUser($name, $gender);
+        if ($result['code'] != ErrorCode::SUCCESS) {
+            throw new \RuntimeException($result['message']);
+        }
+        return Result::success($result['data']);
     }
 
     public function getUserInfo()
     {
         $id = (int) $this->request->input('id');
-        return $this->userServiceClient->getUserInfo($id);
+        $result = $this->userServiceClient->getUserInfo($id);
+        if ($result['code'] != ErrorCode::SUCCESS) {
+            throw new \RuntimeException($result['message']);
+        }
+        return Result::success($result['data']);
     }
 }

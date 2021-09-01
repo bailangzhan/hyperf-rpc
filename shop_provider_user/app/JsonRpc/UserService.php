@@ -27,7 +27,6 @@ class UserService implements UserServiceInterface
             'name' => $name,
             'gender' => $gender,
         ]);
-//        return Result::error("fail");
         return $result ? Result::success() : Result::error("fail");
     }
 
