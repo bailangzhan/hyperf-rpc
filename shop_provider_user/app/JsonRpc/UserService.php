@@ -2,9 +2,8 @@
 
 namespace App\JsonRpc;
 
-use App\Exception\BusinessException;
 use App\Model\User;
-use App\Tools\Result\Result;
+use App\Tools\Result;
 use Hyperf\RpcServer\Annotation\RpcService;
 
 
