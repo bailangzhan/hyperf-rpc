@@ -42,7 +42,7 @@ class UserService implements UserServiceInterface
             throw new \RuntimeException("user not found");
         }
 //        return $user->toArray();
-        return Result::success($user->toArray());
+        return \Bailangzhan\Result\Result::success($user->toArray());
     }
 }
 

@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Constants\ErrorCode;
-use App\Exception\BusinessException;
 use App\JsonRpc\UserServiceInterface;
 use App\Tools\Result;
 use Hyperf\Di\Annotation\Inject;
@@ -41,6 +40,6 @@ class UserController extends AbstractController
         if ($result['code'] != ErrorCode::SUCCESS) {
             throw new \RuntimeException($result['message']);
         }
-        return Result::success($result['data']);
+        return \Bailangzhan\Result\Result::success($result['data']);
     }
 }

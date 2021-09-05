@@ -4,8 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "20fcf128569dbd16b39f36fb0c006277",
+    "content-hash": "b712ec68647872e382306419c77564d2",
     "packages": [
+        {
+            "name": "bailangzhan/hyperf-result",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bailangzhan/hyperf-result.git",
+                "reference": "a9bd8e23add852dba2bca6fef1c43542dedbaa63"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bailangzhan/hyperf-result/zipball/a9bd8e23add852dba2bca6fef1c43542dedbaa63",
+                "reference": "a9bd8e23add852dba2bca6fef1c43542dedbaa63",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "hyperf/constants": "^2.2"
+            },
+            "type": "library",
+            "extra": {
+                "hyperf": {
+                    "config": "Bailangzhan\\Result\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bailangzhan\\Result\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "bailangzhan",
+                    "email": "bailangzhan@qq.com"
+                }
+            ],
+            "description": "hyperf rpc 或者api 响应结果统一数据格式",
+            "support": {
+                "issues": "https://github.com/bailangzhan/hyperf-result/issues",
+                "source": "https://github.com/bailangzhan/hyperf-result/tree/0.0.1"
+            },
+            "time": "2021-09-02T21:26:33+00:00"
+        },
         {
             "name": "doctrine/annotations",
             "version": "1.13.2",
