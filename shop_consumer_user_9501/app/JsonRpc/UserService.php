@@ -4,7 +4,7 @@ namespace App\JsonRpc;
 
 use Hyperf\RpcClient\AbstractServiceClient;
 
-class UserService extends AbstractServiceClient implements UserServiceInterface
+class UserService extends AbstractServiceClient
 {
     /**
      * 定义对应服务提供者的服务名称
