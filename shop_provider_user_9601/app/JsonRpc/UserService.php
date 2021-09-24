@@ -3,7 +3,8 @@
 namespace App\JsonRpc;
 
 use App\Model\User;
-use App\Tools\Result;
+use Bailangzhan\Result\Result;
+use Hyperf\CircuitBreaker\Annotation\CircuitBreaker;
 use Hyperf\RpcServer\Annotation\RpcService;
 use Hyperf\ServiceGovernanceConsul\ConsulAgent;
 use Hyperf\Utils\ApplicationContext;
@@ -62,6 +63,33 @@ class UserService implements UserServiceInterface
             // 健康状态检查
             'checks' => $agent->checks()->json(),
         ]);
+    }
+
+    /**
+     * @param $id
+     * fallback="App\JsonRpc\UserService::fallback"
+     * @CircuitBreaker(timeout=0.5, duration=10, failCounter=1, successCounter=3, fallback=Hyperf\CircuitBreaker\FallbackInterface::class)
+     * failCounter=1 失败一次，熔断器就打开
+     * successCounter=3 成功3次，熔断器就关闭
+     *
+     * @return array
+     */
+    public function timeout($id)
+    {
+        try {
+            // 暂停1秒模拟业务耗时
+            if ($id > 0) {
+                sleep(1);
+            }
+        } catch (\Exception $e) {
+            throw new \RuntimeException($e->getMessage());
+        }
+        return Result::success([]);
+    }
+
+    public function fallback()
+    {
+        return Result::error("服务器繁忙！");
     }
 }
 

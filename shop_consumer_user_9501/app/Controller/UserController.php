@@ -47,4 +47,10 @@ class UserController extends AbstractController
     {
         return \Bailangzhan\Result\Result::success($this->userServiceClient->test());
     }
+
+    public function timeout()
+    {
+        $id = (int) $this->request->input('id');
+        return \Bailangzhan\Result\Result::success($this->userServiceClient->timeout($id));
+    }
 }

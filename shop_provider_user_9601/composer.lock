@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e513580fec26979f9e8a02ef0510aa0a",
+    "content-hash": "7c85236a62b64b20c0ce7d9f0d62a1aa",
     "packages": [
         {
             "name": "bailangzhan/hyperf-result",
@@ -850,6 +850,68 @@
                 "source": "https://github.com/hyperf/hyperf"
             },
             "time": "2021-07-18T06:50:14+00:00"
+        },
+        {
+            "name": "hyperf/circuit-breaker",
+            "version": "v2.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hyperf/circuit-breaker.git",
+                "reference": "d1e27cb5edbd59230068952340669502e63e1f75"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hyperf/circuit-breaker/zipball/d1e27cb5edbd59230068952340669502e63e1f75",
+                "reference": "d1e27cb5edbd59230068952340669502e63e1f75",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "hyperf/utils": "~2.2.0",
+                "php": ">=7.2",
+                "psr/container": "^1.0|^2.0"
+            },
+            "suggest": {
+                "hyperf/contract": "Required to use annotations.",
+                "hyperf/di": "Required to use annotations."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                },
+                "hyperf": {
+                    "config": "Hyperf\\CircuitBreaker\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hyperf\\CircuitBreaker\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A circuit breaker component for hyperf.",
+            "homepage": "https://hyperf.io",
+            "keywords": [
+                "circuit breaker",
+                "hyperf",
+                "php"
+            ],
+            "support": {
+                "docs": "https://hyperf.wiki",
+                "issues": "https://github.com/hyperf/hyperf/issues",
+                "pull-request": "https://github.com/hyperf/hyperf/pulls",
+                "source": "https://github.com/hyperf/hyperf"
+            },
+            "time": "2021-08-25T11:07:26+00:00"
         },
         {
             "name": "hyperf/command",
@@ -8584,5 +8646,5 @@
         "php": ">=7.3"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.0.0"
 }
