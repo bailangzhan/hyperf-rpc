@@ -1,0 +1,115 @@
+<?php
+
+namespace App\JsonRpc;
+
+use App\Model\User;
+use Hyperf\Contract\ConfigInterface;
+use Hyperf\RpcServer\Annotation\RpcService;
+use Hyperf\ServiceGovernanceConsul\ConsulAgent;
+use Hyperf\ServiceGovernanceNacos\Client;
+use Hyperf\Utils\ApplicationContext;
+use Hyperf\Utils\Codec\Json;
+use Bailangzhan\Result\Result;
+
+/**
+ * @RpcService(name="UserService", protocol="jsonrpc-http", server="jsonrpc-http", publishTo="nacos")
+ */
+class UserService implements UserServiceInterface
+{
+    /**
+     * @param string $name
+     * @param int $gender
+     * @return array
+     */
+    public function createUser(string $name, int $gender)
+    {
+        if (empty($name)) {
+            throw new \RuntimeException("name不能为空");
+        }
+
+        $result = User::query()->create([
+            'name' => $name,
+            'gender' => $gender,
+        ]);
+        return $result ? Result::success() : Result::error("fail");
+    }
+
+    /**
+     * @param int $id
+     * @return array
+     */
+    public function getUserInfo(int $id)
+    {
+//        foo();
+        $user = User::query()->find($id);
+        if (empty($user)) {
+            throw new \RuntimeException("user not found");
+        }
+//        return $user->toArray();
+        return \Bailangzhan\Result\Result::success($user->toArray());
+    }
+
+    /**
+     * @return array
+     */
+    public function test()
+    {
+        $agent = ApplicationContext::getContainer()->get(ConsulAgent::class);
+
+        // 手动注销服务
+        // $agent->deregisterService('UserService-0');
+
+        return \Bailangzhan\Result\Result::success([
+            // 已注册的服务
+            'services' => $agent->services()->json(),
+            // 健康状态检查
+            'checks' => $agent->checks()->json(),
+        ]);
+    }
+
+    /**
+     * 获取nacos server注册的所有服务信息
+     * @return array
+     */
+    public function discovery()
+    {
+        // 获取服务名
+        $client = ApplicationContext::getContainer()->get(Client::class);
+        $services = Json::decode((string) $client->service->list(1, 10, null, 'hyperf')->getBody());
+        $details = [];
+        if (!empty($services['doms'])) {
+            foreach ($services['doms'] as $service) {
+                // 获取各个服务的信息
+                $details[] = Json::decode((string) $client->instance->list($service)->getBody());
+            }
+        }
+
+        return Result::success($details);
+    }
+
+    /**
+     * 获取当前服务信息
+     * @return array
+     */
+    public function getServerInfo()
+    {
+        $port = null;
+        $config = ApplicationContext::getContainer()->get(ConfigInterface::class);
+        $servers = $config->get('server.servers');
+        $appName = $config->get('app_name');
+        foreach ($servers as $k => $server) {
+            if ($server['name'] == 'jsonrpc-http') {
+                $port = $server['port'];
+                break;
+            }
+        }
+
+        return Result::success([
+            'appName' => $appName,
+            'port' => $port,
+        ]);
+    }
+}
+
+
+
