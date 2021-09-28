@@ -74,13 +74,21 @@ class UserService implements UserServiceInterface
     public function discovery()
     {
         // 获取服务名
+        $config = ApplicationContext::getContainer()->get(ConfigInterface::class);
+        $groupName = $config->get('services.drivers.nacos.group_name');
+        $namespaceId = $config->get('services.drivers.nacos.namespace_id');
+
         $client = ApplicationContext::getContainer()->get(Client::class);
-        $services = Json::decode((string) $client->service->list(1, 10, null, 'hyperf')->getBody());
+        $services = Json::decode((string) $client->service->list(1, 10, $groupName, $namespaceId)->getBody());
         $details = [];
         if (!empty($services['doms'])) {
+            $optional = [
+                'groupName' => $groupName,
+                'namespaceId' => $namespaceId,
+            ];
             foreach ($services['doms'] as $service) {
                 // 获取各个服务的信息
-                $details[] = Json::decode((string) $client->instance->list($service)->getBody());
+                $details[] = Json::decode((string) $client->instance->list($service, $optional)->getBody());
             }
         }
 
