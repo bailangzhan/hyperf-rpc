@@ -17,6 +17,7 @@
         "hyperf/cache": "~2.2.0",
         "hyperf/command": "~2.2.0",
         "hyperf/config": "~2.2.0",
+        "hyperf/config-nacos": "^2.2",
         "hyperf/constants": "^2.2",
         "hyperf/database": "~2.2.0",
         "hyperf/db-connection": "~2.2.0",

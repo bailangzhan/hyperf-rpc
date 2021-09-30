@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6e6101d18c41f91a221d48df1eb91b03",
+    "content-hash": "fe18ced52942b685705a3b554433e192",
     "packages": [
         {
             "name": "bailangzhan/hyperf-result",
@@ -977,6 +977,134 @@
                 "source": "https://github.com/hyperf/hyperf"
             },
             "time": "2021-07-18T06:50:14+00:00"
+        },
+        {
+            "name": "hyperf/config-center",
+            "version": "v2.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hyperf/config-center.git",
+                "reference": "9f5d2515e526d43ebbe00b618d0bead20a8cbcb6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hyperf/config-center/zipball/9f5d2515e526d43ebbe00b618d0bead20a8cbcb6",
+                "reference": "9f5d2515e526d43ebbe00b618d0bead20a8cbcb6",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=7.3"
+            },
+            "suggest": {
+                "hyperf/process": "^2.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                },
+                "hyperf": {
+                    "config": "Hyperf\\ConfigCenter\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hyperf\\ConfigCenter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The abstraction component of config center",
+            "homepage": "https://hyperf.io",
+            "keywords": [
+                "config-center",
+                "hyperf",
+                "php"
+            ],
+            "support": {
+                "docs": "https://hyperf.wiki",
+                "issues": "https://github.com/hyperf/hyperf/issues",
+                "pull-request": "https://github.com/hyperf/hyperf/pulls",
+                "source": "https://github.com/hyperf/hyperf"
+            },
+            "time": "2021-08-20T03:54:12+00:00"
+        },
+        {
+            "name": "hyperf/config-nacos",
+            "version": "v2.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hyperf/config-nacos.git",
+                "reference": "56c1c7bba50d600ce1914c0c30110babe9d157be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hyperf/config-nacos/zipball/56c1c7bba50d600ce1914c0c30110babe9d157be",
+                "reference": "56c1c7bba50d600ce1914c0c30110babe9d157be",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "hyperf/config-center": "~2.2.0",
+                "hyperf/contract": "~2.2.0",
+                "hyperf/guzzle": "~2.2.0",
+                "hyperf/nacos": "~2.2.0",
+                "hyperf/utils": "~2.2.0"
+            },
+            "suggest": {
+                "ext-json": "*",
+                "ext-simplexml": "*",
+                "ext-yaml": "*",
+                "hyperf/event": "Required to use listeners. (~2.2.0)",
+                "hyperf/framework": "Required to use listeners. (~2.2.0)",
+                "hyperf/process": "Required to use processes. (~2.2.0)"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                },
+                "hyperf": {
+                    "config": "Hyperf\\ConfigNacos\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hyperf\\ConfigNacos\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A nacos adapter for config center component.",
+            "homepage": "https://hyperf.io",
+            "keywords": [
+                "hyperf",
+                "nacos",
+                "php",
+                "swoole"
+            ],
+            "support": {
+                "docs": "https://hyperf.wiki",
+                "issues": "https://github.com/hyperf/hyperf/issues",
+                "pull-request": "https://github.com/hyperf/hyperf/pulls",
+                "source": "https://github.com/hyperf/hyperf"
+            },
+            "time": "2021-08-10T04:56:07+00:00"
         },
         {
             "name": "hyperf/constants",
