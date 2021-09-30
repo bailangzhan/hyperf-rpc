@@ -54,16 +54,11 @@ class UserService implements UserServiceInterface
      */
     public function test()
     {
-        $agent = ApplicationContext::getContainer()->get(ConsulAgent::class);
-
-        // 手动注销服务
-        // $agent->deregisterService('UserService-0');
-
-        return \Bailangzhan\Result\Result::success([
-            // 已注册的服务
-            'services' => $agent->services()->json(),
-            // 健康状态检查
-            'checks' => $agent->checks()->json(),
+        $config = ApplicationContext::getContainer()->get(ConfigInterface::class);
+        return Result::success([
+            'info' => $config->get('hyperf_config'),
+            'test' => $config->get('test'),
+            'hyperf_env' => $config->get('hyperf_env'),
         ]);
     }
 
