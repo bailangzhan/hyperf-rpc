@@ -13,7 +13,10 @@
 11. [hyperf服务注册与发现之初识consul](http://www.manks.top/hyperf-rpc-consul-docker-install.html)
 12. [hyperf服务注册与发现之consul的使用](http://www.manks.top/hyperf-rpc-how-to-use-consul-in-hyperf.html)
 13. [hyperf服务注册与发现之consul集群](http://www.manks.top/hyperf-rpc-consul-cluster.html)
-14. [hyperf 源码分析——服务注册](http://www.manks.top/hyperf-rpc-source-code-analysis-consul-register.html)
-15. 未完待续...
+14. [hyperf源码分析——服务注册](http://www.manks.top/hyperf-rpc-source-code-analysis-consul-register.html)
+15. [hyperf源码分析——服务发现之负载均衡](http://www.manks.top/hyperf-rpc-source-code-analysis-consul-load-balance.html)
+16. [hyperf服务注册与发现之初识nacos](http://www.manks.top/hyperf-rpc-nacos.html)
+17. [hyperf服务注册与发现之nacos集群](http://www.manks.top/hyperf-rpc-nacos-cluster.html)
+18. 未完待续...
 
 
