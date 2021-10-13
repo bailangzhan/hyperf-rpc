@@ -28,6 +28,8 @@
         "hyperf/logger": "~2.2.0",
         "hyperf/memory": "~2.2.0",
         "hyperf/process": "~2.2.0",
+        "hyperf/rate-limit": "^2.2",
+        "hyperf/redis": "^2.2",
         "hyperf/rpc-server": "^2.2",
         "hyperf/service-governance-consul": "^2.2",
         "hyperf/service-governance-nacos": "^2.2"

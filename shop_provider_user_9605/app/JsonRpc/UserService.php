@@ -4,6 +4,9 @@ namespace App\JsonRpc;
 
 use App\Model\User;
 use Hyperf\Contract\ConfigInterface;
+use Hyperf\Di\Aop\ProceedingJoinPoint;
+use Hyperf\RateLimit\Annotation\RateLimit;
+use Hyperf\RateLimit\Exception\RateLimitException;
 use Hyperf\RpcServer\Annotation\RpcService;
 use Hyperf\ServiceGovernanceConsul\ConsulAgent;
 use Hyperf\ServiceGovernanceNacos\Client;
@@ -36,17 +39,32 @@ class UserService implements UserServiceInterface
 
     /**
      * @param int $id
+     * @RateLimit(create=1, consume=1, capacity=1, waitTimeout=10, limitCallback={UserService::class, "limitCallback"})
+     * create=1, 每秒生成1个令牌
+     * consume=1, 每个请求每次消耗1个令牌
+     * capacity=1, 令牌桶最大是1
+     * waitTimeout=1, 超时时间设置为1秒，QPS超过1时，请求会排队等待，超时会执行 limitCallback 指定的回调方法
+     * limitCallback, 指定请求失败要执行的回调方法
      * @return array
      */
     public function getUserInfo(int $id)
     {
-//        foo();
         $user = User::query()->find($id);
         if (empty($user)) {
             throw new \RuntimeException("user not found");
         }
-//        return $user->toArray();
-        return \Bailangzhan\Result\Result::success($user->toArray());
+        return Result::success($user->toArray());
+    }
+
+    /**
+     * 注意该方法必须是静态方法
+     * @param float $seconds
+     * @param ProceedingJoinPoint $proceedingJoinPoint
+     */
+    public static function limitCallback(float $seconds, ProceedingJoinPoint $proceedingJoinPoint)
+    {
+        //$result = $proceedingJoinPoint->process();
+        throw new RateLimitException('请求过于频繁，请稍后再试！！！', 500);
     }
 
     /**
