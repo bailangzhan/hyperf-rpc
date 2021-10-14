@@ -11,4 +11,6 @@ interface UserServiceInterface
     public function test();
 
     public function getServerInfo();
+
+    public function timeout($id);
 }

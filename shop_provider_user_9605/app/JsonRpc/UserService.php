@@ -3,6 +3,7 @@
 namespace App\JsonRpc;
 
 use App\Model\User;
+use Hyperf\CircuitBreaker\Annotation\CircuitBreaker;
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\Di\Aop\ProceedingJoinPoint;
 use Hyperf\RateLimit\Annotation\RateLimit;
@@ -129,6 +130,23 @@ class UserService implements UserServiceInterface
             'appName' => $appName,
             'port' => $port,
         ]);
+    }
+
+    /**
+     * @param $id
+     * @return array
+     */
+    public function timeout($id)
+    {
+        try {
+            // 暂停1秒模拟业务耗时
+            if ($id > 0) {
+                sleep(1);
+            }
+        } catch (\Exception $e) {
+            throw new \RuntimeException($e->getMessage());
+        }
+        return Result::success([]);
     }
 }
 

@@ -11,4 +11,5 @@ declare(strict_types=1);
  */
 return [
 //    App\JsonRpc\UserServiceInterface::class => App\JsonRpc\UserService::class,
+    Hyperf\CircuitBreaker\FallbackInterface::class => App\CircuitBreaker\GlobalFallback::class,
 ];
