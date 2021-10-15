@@ -14,7 +14,7 @@
     "require": {
         "php": ">=7.3",
         "bailangzhan/hyperf-result": "^0.0.1",
-        "hyperf/cache": "~2.2.0",
+        "hyperf/cache": "^2.2",
         "hyperf/command": "~2.2.0",
         "hyperf/config": "~2.2.0",
         "hyperf/config-nacos": "^2.2",
@@ -32,7 +32,8 @@
         "hyperf/redis": "^2.2",
         "hyperf/rpc-server": "^2.2",
         "hyperf/service-governance-consul": "^2.2",
-        "hyperf/service-governance-nacos": "^2.2"
+        "hyperf/service-governance-nacos": "^2.2",
+        "hyperf/tracer": "^2.2"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",

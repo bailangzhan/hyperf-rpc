@@ -29,7 +29,8 @@
         "hyperf/process": "~2.2.0",
         "hyperf/rpc-client": "^2.2",
         "hyperf/service-governance-consul": "^2.2",
-        "hyperf/service-governance-nacos": "^2.2"
+        "hyperf/service-governance-nacos": "^2.2",
+        "hyperf/tracer": "^2.2"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",

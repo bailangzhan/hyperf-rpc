@@ -3,6 +3,7 @@
 namespace App\JsonRpc;
 
 use App\Model\User;
+use Hyperf\Cache\Annotation\Cacheable;
 use Hyperf\CircuitBreaker\Annotation\CircuitBreaker;
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\Di\Aop\ProceedingJoinPoint;
@@ -147,6 +148,20 @@ class UserService implements UserServiceInterface
             throw new \RuntimeException($e->getMessage());
         }
         return Result::success([]);
+    }
+
+    /**
+     * @Cacheable(prefix="userInfo", ttl="60")
+     * @param int $id
+     * @return array
+     */
+    public function getUserInfoFromCache(int $id)
+    {
+        $user = User::query()->find($id);
+        if (empty($user)) {
+            throw new \RuntimeException("user not found");
+        }
+        return Result::success($user->toArray());
     }
 }
 

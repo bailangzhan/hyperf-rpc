@@ -79,4 +79,14 @@ class UserController extends AbstractController
     {
         return Result::error("服务器繁忙！！！");
     }
+
+    public function getUserInfoFromCache()
+    {
+        $id = (int) $this->request->input('id');
+        $result = $this->userServiceClient->getUserInfoFromCache($id);
+        if ($result['code'] != ErrorCode::SUCCESS) {
+            throw new \RuntimeException($result['message']);
+        }
+        return Result::success($result['data']);
+    }
 }

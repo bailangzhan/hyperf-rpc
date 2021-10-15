@@ -13,4 +13,6 @@ interface UserServiceInterface
     public function getServerInfo();
 
     public function timeout($id);
+
+    public function getUserInfoFromCache(int $id);
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7214402ea9efae656349caddeb726639",
+    "content-hash": "5fee928cb5922e14ad344328414b2e81",
     "packages": [
         {
             "name": "bailangzhan/hyperf-result",
@@ -3046,6 +3046,74 @@
             "time": "2021-08-10T02:47:57+00:00"
         },
         {
+            "name": "hyperf/tracer",
+            "version": "v2.2.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hyperf/tracer.git",
+                "reference": "2bb4bcd775e9be6314bd1513796f5bad1f815c62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hyperf/tracer/zipball/2bb4bcd775e9be6314bd1513796f5bad1f815c62",
+                "reference": "2bb4bcd775e9be6314bd1513796f5bad1f815c62",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "hyperf/contract": "~2.2.0",
+                "hyperf/di": "~2.2.0",
+                "hyperf/guzzle": "~2.2.0",
+                "hyperf/utils": "~2.2.0",
+                "jcchavezs/zipkin-opentracing": "^1.0",
+                "opentracing/opentracing": "^1.0",
+                "php": ">=7.2",
+                "psr/http-message": "^1.0"
+            },
+            "suggest": {
+                "hyperf/event": "Required to use DbQueryExecutedListener.",
+                "jonahgeorge/jaeger-client-php": "Required (^0.6) to use jaeger tracing."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                },
+                "hyperf": {
+                    "config": "Hyperf\\Tracer\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hyperf\\Tracer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A open tracing system implemented for Hyperf or other coroutine framework",
+            "homepage": "https://hyperf.io",
+            "keywords": [
+                "hyperf",
+                "open-tracing",
+                "php",
+                "zipkin"
+            ],
+            "support": {
+                "docs": "https://hyperf.wiki",
+                "issues": "https://github.com/hyperf/hyperf/issues",
+                "pull-request": "https://github.com/hyperf/hyperf/pulls",
+                "source": "https://github.com/hyperf/hyperf"
+            },
+            "time": "2021-09-21T09:06:07+00:00"
+        },
+        {
             "name": "hyperf/utils",
             "version": "v2.2.5",
             "source": {
@@ -3115,6 +3183,66 @@
                 "source": "https://github.com/hyperf/hyperf"
             },
             "time": "2021-08-18T08:28:09+00:00"
+        },
+        {
+            "name": "jcchavezs/zipkin-opentracing",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jcchavezs/zipkin-php-opentracing.git",
+                "reference": "de92acea67971be2a9f7930e5d37924f377f64cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jcchavezs/zipkin-php-opentracing/zipball/de92acea67971be2a9f7930e5d37924f377f64cf",
+                "reference": "de92acea67971be2a9f7930e5d37924f377f64cf",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "opentracing/opentracing": "^1.0.1",
+                "openzipkin/zipkin": "^2.0.2",
+                "php": "~7.1"
+            },
+            "provide": {
+                "opentracing/opentracing": "dev-master"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~7.0",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ZipkinOpenTracing\\": "./src/ZipkinOpenTracing/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "José Carlos Chávez",
+                    "email": "jcchavezs@gmail.com"
+                }
+            ],
+            "description": "A Zipkin bridge with OpenTracing",
+            "support": {
+                "issues": "https://github.com/jcchavezs/zipkin-php-opentracing/issues",
+                "source": "https://github.com/jcchavezs/zipkin-php-opentracing/tree/1.0.0"
+            },
+            "time": "2021-01-19T19:01:00+00:00"
         },
         {
             "name": "laminas/laminas-mime",
@@ -3805,6 +3933,145 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v4.12.0"
             },
             "time": "2021-07-21T10:44:31+00:00"
+        },
+        {
+            "name": "opentracing/opentracing",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/opentracing/opentracing-php.git",
+                "reference": "31d2604bd01a1508307b74949fbe1a6683284834"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/opentracing/opentracing-php/zipball/31d2604bd01a1508307b74949fbe1a6683284834",
+                "reference": "31d2604bd01a1508307b74949fbe1a6683284834",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "~0.12",
+                "phpunit/phpunit": "^7.0 || ^9.0",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OpenTracing\\": "src/OpenTracing/"
+                },
+                "files": [
+                    "src/OpenTracing/Tags.php",
+                    "src/OpenTracing/Formats.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "José Carlos Chávez",
+                    "email": "jcchavezs@gmail.com"
+                }
+            ],
+            "description": "OpenTracing API for PHP",
+            "support": {
+                "issues": "https://github.com/opentracing/opentracing-php/issues",
+                "source": "https://github.com/opentracing/opentracing-php/tree/1.0.1"
+            },
+            "time": "2021-01-05T06:13:49+00:00"
+        },
+        {
+            "name": "openzipkin/zipkin",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/openzipkin/zipkin-php.git",
+                "reference": "f06a8575104af6f5097168a28e7d5f7263ca4eec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/openzipkin/zipkin-php/zipball/f06a8575104af6f5097168a28e7d5f7263ca4eec",
+                "reference": "f06a8575104af6f5097168a28e7d5f7263ca4eec",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": "^7.1",
+                "psr/http-message": "~1.0",
+                "psr/log": "^1.0"
+            },
+            "require-dev": {
+                "guzzlehttp/psr7": "^1.6",
+                "jcchavezs/httptest": "~0.2",
+                "middlewares/fast-route": "^1.2.1",
+                "middlewares/request-handler": "^1.4.0",
+                "phpstan/phpstan": "~0.12.28",
+                "phpunit/phpunit": "~7.5.20",
+                "psr/http-client": "^1.0",
+                "psr/http-server-middleware": "^1.0",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "suggest": {
+                "psr/http-client": "Allows to instrument HTTP clients following PSR18.",
+                "psr/http-server-middleware": "Allows to instrument HTTP servers via middlewares following PSR15."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zipkin\\": "./src/Zipkin/"
+                },
+                "files": [
+                    "./src/Zipkin/Propagation/Id.php",
+                    "./src/Zipkin/Timestamp.php",
+                    "./src/Zipkin/Kind.php",
+                    "./src/Zipkin/Tags.php",
+                    "./src/Zipkin/Annotations.php",
+                    "./src/Zipkin/SpanName.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "José Carlos Chávez",
+                    "email": "jcchavezs@gmail.com"
+                }
+            ],
+            "description": "A Zipkin instrumentation for PHP",
+            "homepage": "https://github.com/openzipkin/zipkin-php",
+            "keywords": [
+                "distributed-tracing",
+                "openzipkin",
+                "tracing",
+                "zipkin"
+            ],
+            "support": {
+                "issues": "https://github.com/openzipkin/zipkin-php/issues",
+                "source": "https://github.com/openzipkin/zipkin-php/tree/2.0.2"
+            },
+            "time": "2020-11-24T09:47:50+00:00"
         },
         {
             "name": "paragonie/random_compat",
