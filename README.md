@@ -17,6 +17,9 @@
 15. [hyperf源码分析——服务发现之负载均衡](http://www.manks.top/hyperf-rpc-source-code-analysis-consul-load-balance.html)
 16. [hyperf服务注册与发现之初识nacos](http://www.manks.top/hyperf-rpc-nacos.html)
 17. [hyperf服务注册与发现之nacos集群](http://www.manks.top/hyperf-rpc-nacos-cluster.html)
-18. 未完待续...
+18. [hyperf配置中心之nacos](http://www.manks.top/hyperf-rpc-config-nacos.html)
+19. [hyperf服务限流](http://www.manks.top/hyperf-rpc-service-flow-control.html)
+20. [hyperf服务降级和服务熔断](http://www.manks.top/hyperf-rpc-service-degradation-and-service-fusing.html)
+21. 未完待续...
 
 
