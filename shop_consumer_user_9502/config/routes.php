@@ -16,3 +16,9 @@ Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@i
 Router::get('/favicon.ico', function () {
     return '';
 });
+
+Router::get('/metrics', function(){
+    $registry = Hyperf\Utils\ApplicationContext::getContainer()->get(Prometheus\CollectorRegistry::class);
+    $renderer = new Prometheus\RenderTextFormat();
+    return $renderer->render($registry->getMetricFamilySamples());
+});

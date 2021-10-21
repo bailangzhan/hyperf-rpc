@@ -9,6 +9,7 @@ use Hyperf\CircuitBreaker\Annotation\CircuitBreaker;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpServer\Annotation\AutoController;
 use Bailangzhan\Result\Result;
+use Hyperf\Metric\Annotation\Counter;
 
 /**
  * Class UserController
@@ -88,5 +89,14 @@ class UserController extends AbstractController
             throw new \RuntimeException($result['message']);
         }
         return Result::success($result['data']);
+    }
+
+    /**
+     * @Counter(name="counter_test")
+     * @return array
+     */
+    public function statTest()
+    {
+        return Result::success(['msg' => 'This is a Counter test.']);
     }
 }

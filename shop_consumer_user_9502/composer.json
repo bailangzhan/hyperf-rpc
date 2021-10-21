@@ -26,6 +26,7 @@
         "hyperf/json-rpc": "^2.2",
         "hyperf/logger": "~2.2.0",
         "hyperf/memory": "~2.2.0",
+        "hyperf/metric": "^2.2",
         "hyperf/process": "~2.2.0",
         "hyperf/rpc-client": "^2.2",
         "hyperf/service-governance-consul": "^2.2",
