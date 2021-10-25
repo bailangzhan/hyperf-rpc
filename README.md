@@ -20,7 +20,7 @@
 18. [hyperf配置中心之nacos](http://www.manks.top/hyperf-rpc-config-nacos.html)
 19. [hyperf服务限流](http://www.manks.top/hyperf-rpc-service-flow-control.html)
 20. [hyperf服务降级和服务熔断](http://www.manks.top/hyperf-rpc-service-degradation-and-service-fusing.html)
-21. [hyperf 分布式链路追踪之zipkin实战](http://www.manks.top/hyperf-rpc-tracer-zipkin.html)
-22. 未完待续...
+21. [hyperf分布式链路追踪之zipkin实战](http://www.manks.top/hyperf-rpc-tracer-zipkin.html)
+22. [【完结】hyperf服务监控之Prometheus+Grafana项目实战](http://www.manks.top/hyperf-rpc-service-monitoring-prometheus-grafana.html)
 
 
